@@ -1,0 +1,4 @@
+***** Array *****
+print array
+- import java.util.Arrays;
+- System.out.println(Arrays.toString(<arr-here>);
