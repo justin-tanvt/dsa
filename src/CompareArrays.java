@@ -15,16 +15,30 @@ public class CompareArrays {
 			arrayList.add(i);
 		}
 
-		// LinkedList
+		// ********** LinkedList **********
 		startTime = System.nanoTime();
-		linkedList.get(500000);
+		// ***** get()
+		// linkedList.get(0);				// fast but slower than arraylist
+		// linkedList.get(500000); 	// very slow, much slower than arraylist
+		// linkedList.get(999999);	// fast but slower than arraylist
+		// ***** remove()
+		// linkedList.remove(0);				// fast
+		// linkedList.remove(500000);		// super slow, 10x slower than arrayList.remove(0)
+		// linkedList.remove(999999);		// fast, but still slower than arraylist
 		endTime = System.nanoTime();
 		elapsedTime = endTime - startTime;
 		System.out.println("LinkedList:\t" + elapsedTime + " ns");
 
-		// ArrayList
+		//********** ArrayList **********
 		startTime = System.nanoTime();
-		arrayList.get(500000);
+		// ***** get()
+		// arrayList.get(0);				// equally fast among arraylist
+		// arrayList.get(500000);		// equally fast among arraylist
+		// arrayList.get(999999);		// equally fast among arraylist
+		// ***** remove()
+		// arrayList.remove(0);					// very slow
+		// arrayList.remove(500000);		// not as slow, 10x slower than linkedList.remove(0)
+		// arrayList.remove(999999);		// super fast
 		endTime = System.nanoTime();
 		elapsedTime = endTime - startTime;
 		System.out.println("ArrayList:\t" + elapsedTime + " ns");
