@@ -5,3 +5,9 @@ System.out.println(Arrays.toString(<arr>);
 
 - get length
 <arr>.length
+import java.util.Arrays;
+
+***** Char *****
+- get alphabets
+int offset = 65;
+alphabets[i] = (char) (i + offset)
