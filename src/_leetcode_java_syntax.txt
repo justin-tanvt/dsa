@@ -7,6 +7,9 @@ System.out.println(Arrays.toString(<arr>);
 <arr>.length
 import java.util.Arrays;
 
+- slice array
+Arrays.copyOfRange(<arr>, startIndex, endIndex);
+
 ***** Char *****
 - get alphabets
 int offset = 65;
