@@ -1,15 +1,11 @@
 import java.util.Arrays;
 
-public class LearnBinarySearch {
+public class LearnInterpolationSearch {
 	public static void main(String[] args) {
-		int[] array = new int[1000000];
-		int target = 777777;
+		int[] array = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+		int target = 256;
 
-		for (int i = 0; i < array.length; i++) {
-			array[i] = i;
-		}
-
-		int index = binarySearch(array, target);
+		int index = interpolationSearch(array, target);
 
 		if (index != -1) {
 			System.out.println("element found at index: " + index);
@@ -18,31 +14,31 @@ public class LearnBinarySearch {
 		}
 	}	
 
-	private static int binarySearch(int[] array, int target) {
+	private static int interpolationSearch(int[] array, int target) {
 		int left = 0;
 		int right = array.length - 1;
 		int i = 0;
 
-		while (left <= right) {
+		while (left <= right && target >= array[left] && target <= array[right]) {
 			i++;
-			int mid = left + (right - left) / 2;
-			int value = array[mid];
+			int probe = left + (right - left) * (target - array[left]) / (array[right] - array[left]);
+			int value = array[probe];
 
 			System.out.printf("\niteration [%s]\n", i);
 			System.out.printf("\tleft: \t%s\n", left);
-			System.out.printf("\tmid: \t%s\n", mid);
+			System.out.printf("\tprobe: \t%s\n", probe);
 			System.out.printf("\tright: \t%s\n", right);
 			// System.out.println(Arrays.toString(Arrays.copyOfRange(array, left, right)));
 
 			if (target == value) {
 				System.out.println("target found!");
-				return mid;
+				return probe;
 			} else if (target < value) {
 				System.out.println("target in lower half");
-				right = mid - 1;
+				right = probe - 1;
 			} else {
 				System.out.println("target in upper half");
-				left = mid + 1;
+				left = probe + 1;
 			}
 		}
 

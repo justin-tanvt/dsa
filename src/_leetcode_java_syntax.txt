@@ -1,4 +1,8 @@
 ***** Array *****
+- init array
+int[] <arr> = {1, 2, 3};
+char[] <arr> = {'A', 'B', 'C'};
+
 - print values
 import java.util.Arrays;
 System.out.println(Arrays.toString(<arr>);
@@ -13,4 +17,7 @@ Arrays.copyOfRange(<arr>, startIndex, endIndex);
 ***** Char *****
 - get alphabets
 int offset = 65;
-alphabets[i] = (char) (i + offset)
+char[] alphabets = new int[26];
+for (int i = 0; i < 26; i++) {
+  alphabets[i] = (char) (i + offset);
+}
