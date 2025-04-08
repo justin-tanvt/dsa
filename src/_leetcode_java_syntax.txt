@@ -7,6 +7,7 @@ char[] <arr> = {'A', 'B', 'C'};
 - print values
 import java.util.Arrays;
 System.out.println(Arrays.toString(<arr>);
+System.out.println(Arrays.deepToString(<arr>);
 
 - get length
 <arr>.length
@@ -14,6 +15,10 @@ import java.util.Arrays;
 
 - slice array
 Arrays.copyOfRange(<arr>, startIndex, endIndex);
+eg. {1, 2, 3, 4, 5}
+  -> middle = <arr>.length / 2;
+  -> copyOfRange(<arr>, 0, middle) = {1, 2};
+  -> copyOfRange(<arr>, middle, <arr>.length) = {3, 4, 5};
 
 ---------- Primitives and Conversions ----------
 ***** Char *****
