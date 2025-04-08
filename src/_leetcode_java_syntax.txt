@@ -7,6 +7,8 @@ char[] <arr> = {'A', 'B', 'C'};
 - print values
 import java.util.Arrays;
 System.out.println(Arrays.toString(<arr>);
+
+- print nested values (NOTE: reference variables only)
 System.out.println(Arrays.deepToString(<arr>);
 
 - get length

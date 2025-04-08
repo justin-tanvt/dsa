@@ -4,7 +4,7 @@ public class LearnMergeSort {
 	public static void main(String[] args) {
 		int[] array = {8, 2, 5, 3, 4, 7, 6, 1};
 		mergeSort(array);
-		System.out.println(Arrays.deepToString(array));
+		System.out.println(Arrays.toString(array));
 	}
 
 	private static void mergeSort(int[] array) {
@@ -20,15 +20,15 @@ public class LearnMergeSort {
 		int middle = length / 2;
 		int[] A = Arrays.copyOfRange(array, 0, middle);
 		int[] B = Arrays.copyOfRange(array, middle, length);
-		System.out.println(Arrays.deepToString(array) + " -> " + 
-			Arrays.deepToString(A) + ", " + Arrays.deepToString(B));
+		System.out.println(Arrays.toString(array) + " -> " + 
+			Arrays.toString(A) + ", " + Arrays.toString(B));
 		// pass smaller arrays into mergeSort again
 		mergeSort(A);
 		mergeSort(B);
 		// merge sorted smaller arrays
 		merge(A, B, array);
-		System.out.println(Arrays.deepToString(A) + " + " + 
-			Arrays.deepToString(B) + " -> " + Arrays.deepToString(array));
+		System.out.println(Arrays.toString(A) + " + " + 
+			Arrays.toString(B) + " -> " + Arrays.toString(array));
 	}
 
 	private static void merge(int[] leftArray, int[] rightArray, int[] mergedArray) {
