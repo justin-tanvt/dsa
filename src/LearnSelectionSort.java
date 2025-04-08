@@ -13,15 +13,13 @@ public class LearnSelectionSort {
 		// end outer loop at n-1, because last element will already be sorted
 		for (int i = 0; i < array.length - 1; i++) {
 
-			// inner loop : iterate through all elements
-			// assign starting values for min value and min idx
-			int minVal = array[i];
-			int minIdx = array[i];
-			for (int j = i; j < array.length; j++) {
-				// note min value
+			// inner loop : iterate through all elements to find min value
+			// use i as starting value for min idx
+			int minIdx = i;
+			// start outer loop at i+1 since i already used as starting value
+			for (int j = i + 1; j < array.length; j++) {
 				// note min index
-				if (array[j] < minVal) {
-					minVal = array[j];
+				if (array[j] < array[minIdx]) {
 					minIdx = j;
 				}
 			}
@@ -31,7 +29,7 @@ public class LearnSelectionSort {
 			// store current element in temp variable
 			int temp = array[i];
 			// assign min value to outer loop index
-			array[i] = minVal;
+			array[i] = array[minIdx];
 			// assign current element value to min value index
 			array[minIdx] = temp;
 
