@@ -32,19 +32,27 @@ public class LearnMergeSort {
 	}
 
 	private static void merge(int[] leftArray, int[] rightArray, int[] mergedArray) {
-		int idxA = 0;
-		int idxB = 0;
-		int idxMerged = 0;
+		int leftSize = leftArray.length;
+		int rightSize = rightArray.length;
+		int mergedSize = mergedArray.length;
 
-		while (idxMerged < mergedArray.length) {
-			if (idxB == rightArray.length || idxA != leftArray.length && leftArray[idxA] < rightArray[idxB]) {
-				mergedArray[idxMerged] = leftArray[idxA];
-				idxA++;
+		int l = 0, r = 0, i = 0;
+
+		while (i < mergedSize) {
+			// IF right array fully consumed OR
+			// left and right arrays not fully consumed AND left array value < right array value
+			if (r == rightSize || l != leftArray.length && leftArray[l] < rightArray[r]) {
+				// fill merged array with left array
+				mergedArray[i] = leftArray[l];
+				l++;
+			// ELSE (IMPLICIT IF) left array fully consumed OR
+			// left and right arrays not fully consumed AND left array value > right array value
 			} else {
-				mergedArray[idxMerged] = rightArray[idxB];
-				idxB++;
+				// fill merged array with right array
+				mergedArray[i] = rightArray[r];
+				r++;
 			}	
-			idxMerged++;
+			i++;
 		}
 	}
 
