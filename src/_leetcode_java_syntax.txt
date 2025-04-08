@@ -1,3 +1,4 @@
+---------- Data Structures ----------
 ***** Array *****
 - init array
 int[] <arr> = {1, 2, 3};
@@ -14,6 +15,7 @@ import java.util.Arrays;
 - slice array
 Arrays.copyOfRange(<arr>, startIndex, endIndex);
 
+---------- Primitives and Conversions ----------
 ***** Char *****
 - get alphabets
 int offset = 65;
@@ -21,3 +23,5 @@ char[] alphabets = new int[26];
 for (int i = 0; i < 26; i++) {
   alphabets[i] = (char) (i + offset);
 }
+***** Digits *****
+int digit = Character.digit(Integer.toString(<num>).charAt(<idx>)), 10);
