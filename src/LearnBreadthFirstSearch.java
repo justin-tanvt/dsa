@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.Queue;
+import java.util.LinkedList;
 
-public class LearnGraphAdjacencyMatrix {
+public class LearnBreadthFirstSearch {
 	public static void main(String[] args) {
-		GraphAM graph = new GraphAM(5);
+		GraphBFS graph = new GraphBFS(5);
 		graph.addNode(new Node('A'));
 		graph.addNode(new Node('B'));
 		graph.addNode(new Node('C'));
@@ -18,17 +20,16 @@ public class LearnGraphAdjacencyMatrix {
 		graph.addEdge(4, 2);
 		
 		graph.print();
-
-		System.out.println(graph.checkEdge(0, 1));
+		graph.breadthFirstSearch(0);
 	}
 }
 
-class GraphAM {
+class GraphBFS {
 
 	ArrayList<Node> nodes;
 	int[][] matrix;
 
-	public GraphAM(int size) {
+	public GraphBFS(int size) {
 		nodes = new ArrayList<>();
 		matrix = new int[size][size];
 	}
@@ -59,8 +60,35 @@ class GraphAM {
 			}
 			System.out.println();
 		}	
-
+		System.out.println();
 	}
+
+	public void breadthFirstSearch(int node) {
+		Queue<Integer> queue = new LinkedList<>();
+		boolean[] visited = new boolean[matrix.length];
+
+		// add starting node to queue and mark as visited
+		queue.offer(node);
+		visited[node] = true;
+
+		while (queue.size() != 0) {
+			// process node from queue
+			node = queue.poll();
+			System.out.println(nodes.get(node).data + " = visited");
+
+			// explore nodes adjacent to current node, breadth-wise
+			for (int i = 0; i < matrix[node].length; i++) {
+				// add to queue if connected and not visited yet
+				if (matrix[node][i] == 1 && !visited[i]) {
+					queue.offer(i);
+					// mark as visited once queued
+					// to prevent double queueing
+					visited[i] = true;
+				}
+			}
+		}
+	}
+
 }
 
 class Node {

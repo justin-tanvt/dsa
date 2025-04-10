@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class LearnGraphAdjacencyMatrix {
+public class LearnDepthFirstSearch {
 	public static void main(String[] args) {
-		GraphAM graph = new GraphAM(5);
+		GraphDFS graph = new GraphDFS(5);
 		graph.addNode(new Node('A'));
 		graph.addNode(new Node('B'));
 		graph.addNode(new Node('C'));
@@ -18,17 +18,16 @@ public class LearnGraphAdjacencyMatrix {
 		graph.addEdge(4, 2);
 		
 		graph.print();
-
-		System.out.println(graph.checkEdge(0, 1));
+		graph.depthFirstSearch(3);
 	}
 }
 
-class GraphAM {
+class GraphDFS {
 
 	ArrayList<Node> nodes;
 	int[][] matrix;
 
-	public GraphAM(int size) {
+	public GraphDFS(int size) {
 		nodes = new ArrayList<>();
 		matrix = new int[size][size];
 	}
@@ -60,6 +59,30 @@ class GraphAM {
 			System.out.println();
 		}	
 
+	}
+
+	public void depthFirstSearch(int node) {
+		boolean[] visited = new boolean[matrix.length];
+		dfsHelper(node, visited);
+	}
+
+	private void dfsHelper(int node, boolean[] visited) {
+		// do not explore if already visited
+		if (visited[node]) {
+			return;
+		// if new, add to visited
+		} else {
+			visited[node] = true;
+			// perform some action
+			System.out.println(nodes.get(node).data + " = visited");
+		}
+
+		// recursively visit every accessible adjacent node
+		for (int i = 0; i < matrix[node].length; i++) {
+			if (matrix[node][i] == 1) {
+				dfsHelper(i, visited);
+			}
+		}
 	}
 }
 
