@@ -1,3 +1,5 @@
+package learn.brocode;
+
 import java.util.HashMap;
 
 public class LearnHashMap {

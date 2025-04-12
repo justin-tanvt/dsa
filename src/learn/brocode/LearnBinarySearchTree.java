@@ -1,3 +1,5 @@
+package learn.brocode;
+
 public class LearnBinarySearchTree {
 	public static void main(String[] args) {
 		BinarySearchTree tree = new BinarySearchTree();

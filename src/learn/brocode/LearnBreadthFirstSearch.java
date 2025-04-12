@@ -1,3 +1,5 @@
+package learn.brocode;
+
 import java.util.ArrayList;
 import java.util.Queue;
 import java.util.LinkedList;
@@ -5,11 +7,11 @@ import java.util.LinkedList;
 public class LearnBreadthFirstSearch {
 	public static void main(String[] args) {
 		GraphBFS graph = new GraphBFS(5);
-		graph.addNode(new Node('A'));
-		graph.addNode(new Node('B'));
-		graph.addNode(new Node('C'));
-		graph.addNode(new Node('D'));
-		graph.addNode(new Node('E'));
+		graph.addNode(new NodeBFS('A'));
+		graph.addNode(new NodeBFS('B'));
+		graph.addNode(new NodeBFS('C'));
+		graph.addNode(new NodeBFS('D'));
+		graph.addNode(new NodeBFS('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -26,7 +28,7 @@ public class LearnBreadthFirstSearch {
 
 class GraphBFS {
 
-	ArrayList<Node> nodes;
+	ArrayList<NodeBFS> nodes;
 	int[][] matrix;
 
 	public GraphBFS(int size) {
@@ -34,7 +36,7 @@ class GraphBFS {
 		matrix = new int[size][size];
 	}
 
-	public void addNode(Node node) {
+	public void addNode(NodeBFS node) {
 		nodes.add(node);
 	}
 
@@ -48,7 +50,7 @@ class GraphBFS {
 
 	public void print() {
 		System.out.print("  ");
-		for (Node node : nodes) {
+		for (NodeBFS node : nodes) {
 			System.out.print(node.data + " ");
 		}
 		System.out.println();
@@ -91,10 +93,10 @@ class GraphBFS {
 
 }
 
-class Node {
+class NodeBFS {
 	char data;
 
-	public Node(char data) {
+	public NodeBFS(char data) {
 		this.data = data;
 	}
 }

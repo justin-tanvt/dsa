@@ -1,13 +1,15 @@
+package learn.brocode;
+
 import java.util.ArrayList;
 
 public class LearnDepthFirstSearch {
 	public static void main(String[] args) {
 		GraphDFS graph = new GraphDFS(5);
-		graph.addNode(new Node('A'));
-		graph.addNode(new Node('B'));
-		graph.addNode(new Node('C'));
-		graph.addNode(new Node('D'));
-		graph.addNode(new Node('E'));
+		graph.addNode(new NodeBFS('A'));
+		graph.addNode(new NodeBFS('B'));
+		graph.addNode(new NodeBFS('C'));
+		graph.addNode(new NodeBFS('D'));
+		graph.addNode(new NodeBFS('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -24,7 +26,7 @@ public class LearnDepthFirstSearch {
 
 class GraphDFS {
 
-	ArrayList<Node> nodes;
+	ArrayList<NodeBFS> nodes;
 	int[][] matrix;
 
 	public GraphDFS(int size) {
@@ -32,7 +34,7 @@ class GraphDFS {
 		matrix = new int[size][size];
 	}
 
-	public void addNode(Node node) {
+	public void addNode(NodeBFS node) {
 		nodes.add(node);
 	}
 
@@ -46,7 +48,7 @@ class GraphDFS {
 
 	public void print() {
 		System.out.print("  ");
-		for (Node node : nodes) {
+		for (NodeBFS node : nodes) {
 			System.out.print(node.data + " ");
 		}
 		System.out.println();
@@ -86,10 +88,10 @@ class GraphDFS {
 	}
 }
 
-class Node {
+class NodeDFS {
 	char data;
 
-	public Node(char data) {
+	public NodeDFS(char data) {
 		this.data = data;
 	}
 }

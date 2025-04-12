@@ -1,13 +1,15 @@
+package learn.brocode;
+
 import java.util.ArrayList;
 
 public class LearnGraphAdjacencyMatrix {
 	public static void main(String[] args) {
 		GraphAM graph = new GraphAM(5);
-		graph.addNode(new Node('A'));
-		graph.addNode(new Node('B'));
-		graph.addNode(new Node('C'));
-		graph.addNode(new Node('D'));
-		graph.addNode(new Node('E'));
+		graph.addNode(new NodeBFS('A'));
+		graph.addNode(new NodeBFS('B'));
+		graph.addNode(new NodeBFS('C'));
+		graph.addNode(new NodeBFS('D'));
+		graph.addNode(new NodeBFS('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -25,7 +27,7 @@ public class LearnGraphAdjacencyMatrix {
 
 class GraphAM {
 
-	ArrayList<Node> nodes;
+	ArrayList<NodeBFS> nodes;
 	int[][] matrix;
 
 	public GraphAM(int size) {
@@ -33,7 +35,7 @@ class GraphAM {
 		matrix = new int[size][size];
 	}
 
-	public void addNode(Node node) {
+	public void addNode(NodeBFS node) {
 		nodes.add(node);
 	}
 
@@ -47,7 +49,7 @@ class GraphAM {
 
 	public void print() {
 		System.out.print("  ");
-		for (Node node : nodes) {
+		for (NodeBFS node : nodes) {
 			System.out.print(node.data + " ");
 		}
 		System.out.println();
@@ -63,10 +65,10 @@ class GraphAM {
 	}
 }
 
-class Node {
+class NodeAM {
 	char data;
 
-	public Node(char data) {
+	public NodeAM(char data) {
 		this.data = data;
 	}
 }

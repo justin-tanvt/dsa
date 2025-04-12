@@ -1,3 +1,5 @@
+package learn.brocode;
+
 public class LearnRecursion {
 	public static void main(String[] args) {
 		System.out.println(iFactorial(7));

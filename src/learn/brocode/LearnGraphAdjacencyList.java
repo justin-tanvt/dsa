@@ -1,14 +1,16 @@
+package learn.brocode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class LearnGraphAdjacencyList {
 	public static void main(String[] args) {
 		GraphAL graph = new GraphAL(5);
-		graph.addNode(new Node('A'));
-		graph.addNode(new Node('B'));
-		graph.addNode(new Node('C'));
-		graph.addNode(new Node('D'));
-		graph.addNode(new Node('E'));
+		graph.addNode(new NodeBFS('A'));
+		graph.addNode(new NodeBFS('B'));
+		graph.addNode(new NodeBFS('C'));
+		graph.addNode(new NodeBFS('D'));
+		graph.addNode(new NodeBFS('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -25,29 +27,29 @@ public class LearnGraphAdjacencyList {
 
 class GraphAL {
 
-	ArrayList<LinkedList<Node>> alist;
+	ArrayList<LinkedList<NodeBFS>> alist;
 
 	public GraphAL(int size) {
 		alist = new ArrayList<>();
 	}
 
-	public void addNode(Node node) {
-		LinkedList<Node> currentList = new LinkedList<>();
+	public void addNode(NodeBFS node) {
+		LinkedList<NodeBFS> currentList = new LinkedList<>();
 		currentList.add(node);
 		alist.add(currentList);
 	}
 
 	public void addEdge(int from, int to) {
-		LinkedList<Node> currentList = alist.get(from);
-		Node toNode = alist.get(to).get(0);
+		LinkedList<NodeBFS> currentList = alist.get(from);
+		NodeBFS toNode = alist.get(to).get(0);
 		currentList.add(toNode);
 	}
 
 	public boolean checkEdge(int from, int to) {
-		LinkedList<Node> currentList = alist.get(from);
-		Node toNode = alist.get(to).get(0);
+		LinkedList<NodeBFS> currentList = alist.get(from);
+		NodeBFS toNode = alist.get(to).get(0);
 
-		for (Node node : currentList) {
+		for (NodeBFS node : currentList) {
 			if (node == toNode) {
 				return true;
 			}
@@ -57,8 +59,8 @@ class GraphAL {
 	}
 
 	public void print() {
-		for (LinkedList<Node> currentList : alist) {
-			for (Node node : currentList) {
+		for (LinkedList<NodeBFS> currentList : alist) {
+			for (NodeBFS node : currentList) {
 				System.out.print(node.data + " -> ");
 			}
 			System.out.println();
@@ -67,10 +69,10 @@ class GraphAL {
 
 }
 
-class Node {
+class NodeAL {
 	char data;
 
-	public Node(char data) {
+	public NodeAL(char data) {
 		this.data = data;
 	}
 }
