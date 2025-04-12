@@ -15,6 +15,9 @@ eg. {1, 2, 3, 4, 5}
   -> copyOfRange(<arr>, 0, middle) = {1, 2};
   -> copyOfRange(<arr>, middle, <arr>.length) = {3, 4, 5};
 
+- check value equality
+Arrays.equals(<arr1>, <arr2>);
+
 - return array with variables as values
 return new int[]{a, b};
 
