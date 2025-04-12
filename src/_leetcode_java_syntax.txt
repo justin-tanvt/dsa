@@ -34,9 +34,9 @@ V get(Obj k)
 boolean containsKey(Obj k)
 boolean containsValue(Obj v)
 void clear()
+Map.Entry<K, V> entrySet()
 Set<K> keySet()
 Collection<V> values()
-Map.Entry<K, V> entrySet()
 for(Map.Entry<Integer, String> pair : hashmap.entrySet()) {
     System.out.println(pair.getKey() + " -> " + pair.getValue());
 }
@@ -64,6 +64,8 @@ char[] alphabets = new int[26];
 for (int i = 0; i < 26; i++) {
   alphabets[i] = (char) (i + offset);
 }
+- count alphabets
+count[s.charAt(i) - 'a']++;
 
 
 ***** Digits *****
