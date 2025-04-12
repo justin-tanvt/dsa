@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class LearnDepthFirstSearch {
 	public static void main(String[] args) {
 		GraphDFS graph = new GraphDFS(5);
-		graph.addNode(new NodeBFS('A'));
-		graph.addNode(new NodeBFS('B'));
-		graph.addNode(new NodeBFS('C'));
-		graph.addNode(new NodeBFS('D'));
-		graph.addNode(new NodeBFS('E'));
+		graph.addNode(new NodeDFS('A'));
+		graph.addNode(new NodeDFS('B'));
+		graph.addNode(new NodeDFS('C'));
+		graph.addNode(new NodeDFS('D'));
+		graph.addNode(new NodeDFS('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -26,7 +26,7 @@ public class LearnDepthFirstSearch {
 
 class GraphDFS {
 
-	ArrayList<NodeBFS> nodes;
+	ArrayList<NodeDFS> nodes;
 	int[][] matrix;
 
 	public GraphDFS(int size) {
@@ -34,7 +34,7 @@ class GraphDFS {
 		matrix = new int[size][size];
 	}
 
-	public void addNode(NodeBFS node) {
+	public void addNode(NodeDFS node) {
 		nodes.add(node);
 	}
 
@@ -48,7 +48,7 @@ class GraphDFS {
 
 	public void print() {
 		System.out.print("  ");
-		for (NodeBFS node : nodes) {
+		for (NodeDFS node : nodes) {
 			System.out.print(node.data + " ");
 		}
 		System.out.println();

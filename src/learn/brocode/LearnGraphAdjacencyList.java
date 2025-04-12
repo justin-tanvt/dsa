@@ -6,11 +6,11 @@ import java.util.LinkedList;
 public class LearnGraphAdjacencyList {
 	public static void main(String[] args) {
 		GraphAL graph = new GraphAL(5);
-		graph.addNode(new NodeBFS('A'));
-		graph.addNode(new NodeBFS('B'));
-		graph.addNode(new NodeBFS('C'));
-		graph.addNode(new NodeBFS('D'));
-		graph.addNode(new NodeBFS('E'));
+		graph.addNode(new NodeAL('A'));
+		graph.addNode(new NodeAL('B'));
+		graph.addNode(new NodeAL('C'));
+		graph.addNode(new NodeAL('D'));
+		graph.addNode(new NodeAL('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -27,29 +27,29 @@ public class LearnGraphAdjacencyList {
 
 class GraphAL {
 
-	ArrayList<LinkedList<NodeBFS>> alist;
+	ArrayList<LinkedList<NodeAL>> alist;
 
 	public GraphAL(int size) {
 		alist = new ArrayList<>();
 	}
 
-	public void addNode(NodeBFS node) {
-		LinkedList<NodeBFS> currentList = new LinkedList<>();
+	public void addNode(NodeAL node) {
+		LinkedList<NodeAL> currentList = new LinkedList<>();
 		currentList.add(node);
 		alist.add(currentList);
 	}
 
 	public void addEdge(int from, int to) {
-		LinkedList<NodeBFS> currentList = alist.get(from);
-		NodeBFS toNode = alist.get(to).get(0);
+		LinkedList<NodeAL> currentList = alist.get(from);
+		NodeAL toNode = alist.get(to).get(0);
 		currentList.add(toNode);
 	}
 
 	public boolean checkEdge(int from, int to) {
-		LinkedList<NodeBFS> currentList = alist.get(from);
-		NodeBFS toNode = alist.get(to).get(0);
+		LinkedList<NodeAL> currentList = alist.get(from);
+		NodeAL toNode = alist.get(to).get(0);
 
-		for (NodeBFS node : currentList) {
+		for (NodeAL node : currentList) {
 			if (node == toNode) {
 				return true;
 			}
@@ -59,8 +59,8 @@ class GraphAL {
 	}
 
 	public void print() {
-		for (LinkedList<NodeBFS> currentList : alist) {
-			for (NodeBFS node : currentList) {
+		for (LinkedList<NodeAL> currentList : alist) {
+			for (NodeAL node : currentList) {
 				System.out.print(node.data + " -> ");
 			}
 			System.out.println();

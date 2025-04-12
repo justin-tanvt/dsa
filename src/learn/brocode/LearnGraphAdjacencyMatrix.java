@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class LearnGraphAdjacencyMatrix {
 	public static void main(String[] args) {
 		GraphAM graph = new GraphAM(5);
-		graph.addNode(new NodeBFS('A'));
-		graph.addNode(new NodeBFS('B'));
-		graph.addNode(new NodeBFS('C'));
-		graph.addNode(new NodeBFS('D'));
-		graph.addNode(new NodeBFS('E'));
+		graph.addNode(new NodeAM('A'));
+		graph.addNode(new NodeAM('B'));
+		graph.addNode(new NodeAM('C'));
+		graph.addNode(new NodeAM('D'));
+		graph.addNode(new NodeAM('E'));
 
 		graph.addEdge(0, 1);
 		graph.addEdge(1, 2);
@@ -27,7 +27,7 @@ public class LearnGraphAdjacencyMatrix {
 
 class GraphAM {
 
-	ArrayList<NodeBFS> nodes;
+	ArrayList<NodeAM> nodes;
 	int[][] matrix;
 
 	public GraphAM(int size) {
@@ -35,7 +35,7 @@ class GraphAM {
 		matrix = new int[size][size];
 	}
 
-	public void addNode(NodeBFS node) {
+	public void addNode(NodeAM node) {
 		nodes.add(node);
 	}
 
@@ -49,7 +49,7 @@ class GraphAM {
 
 	public void print() {
 		System.out.print("  ");
-		for (NodeBFS node : nodes) {
+		for (NodeAM node : nodes) {
 			System.out.print(node.data + " ");
 		}
 		System.out.println();
