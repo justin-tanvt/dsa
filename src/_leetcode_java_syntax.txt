@@ -22,6 +22,15 @@ eg. {1, 2, 3, 4, 5}
   -> copyOfRange(<arr>, 0, middle) = {1, 2};
   -> copyOfRange(<arr>, middle, <arr>.length) = {3, 4, 5};
 
+***** HashSet *****
+int size()
+boolean isEmpty()
+boolean add(E e)
+boolean cointains(Obj o)
+boolean remove(Obj o)
+void clear()
+T[] toArray(T[] a)
+
 ---------- Primitives and Conversions ----------
 ***** Char *****
 - get alphabets
