@@ -1,19 +1,12 @@
 ---------- Data Structures ----------
-***** Array *****
-- init array
-int[] <arr> = {1, 2, 3};
-char[] <arr> = {'A', 'B', 'C'};
 
-- print values
-import java.util.Arrays;
+***** Array *****
+char[] <arr> = {'A', 'B', 'C'};
+<arr>.length
 System.out.println(Arrays.toString(<arr>);
 
 - print nested values (NOTE: reference variables only)
 System.out.println(Arrays.deepToString(<arr>);
-
-- get length
-<arr>.length
-import java.util.Arrays;
 
 - slice array
 Arrays.copyOfRange(<arr>, startIndex, endIndex);
@@ -21,6 +14,30 @@ eg. {1, 2, 3, 4, 5}
   -> middle = <arr>.length / 2;
   -> copyOfRange(<arr>, 0, middle) = {1, 2};
   -> copyOfRange(<arr>, middle, <arr>.length) = {3, 4, 5};
+
+- return array with variables as values
+return new int[]{a, b};
+
+***** Array <> List *****
+List Arrays.asList(<elems>)
+T[] <list>.toArray(new T[0])
+
+
+***** HashMap *****
+int size()
+boolean isEmpty()
+V put(K k, V v)
+V get(Obj k)
+boolean containsKey(Obj k)
+boolean containsValue(Obj v)
+void clear()
+Set<K> keySet()
+Collection<V> values()
+Map.Entry<K, V> entrySet()
+for(Map.Entry<Integer, String> pair : hashmap.entrySet()) {
+    System.out.println(pair.getKey() + " -> " + pair.getValue());
+}
+
 
 ***** HashSet *****
 int size()
@@ -30,8 +47,12 @@ boolean cointains(Obj o)
 boolean remove(Obj o)
 void clear()
 T[] toArray(T[] a)
+- init hashset with values
+HashSet<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u'));
+
 
 ---------- Primitives and Conversions ----------
+
 ***** Char *****
 - get alphabets
 int offset = 65;
@@ -39,5 +60,7 @@ char[] alphabets = new int[26];
 for (int i = 0; i < 26; i++) {
   alphabets[i] = (char) (i + offset);
 }
+
+
 ***** Digits *****
 int digit = Character.digit(Integer.toString(<num>).charAt(<idx>)), 10);
