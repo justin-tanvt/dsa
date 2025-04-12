@@ -22,15 +22,19 @@ Arrays.equals(<arr1>, <arr2>);
 return new int[]{a, b};
 
 ***** Array <> List *****
-List Arrays.asList(<elems>)
+List<T> Arrays.asList(T[] <arr>)
+List<T> List.of(T[] <arr>)
+List<T> Arrays.stream(<arr-prim>).boxed().toList();
 T[] <list>.toArray(new T[0])
 
 
 ***** HashMap *****
 int size()
 boolean isEmpty()
-V put(K k, V v)
+previousV put(K k, V v)
+previousV putIfAbsent(K k, V v)
 V get(Obj k)
+V getOrDefault(Obj k, V v)
 boolean containsKey(Obj k)
 boolean containsValue(Obj v)
 void clear()
@@ -40,6 +44,9 @@ Collection<V> values()
 for(Map.Entry<Integer, String> pair : hashmap.entrySet()) {
     System.out.println(pair.getKey() + " -> " + pair.getValue());
 }
+map.forEach( (k,v) -> {
+    System.out.println(k + " -> " + v);
+});
 <map1>.equals(<map2>);
 
 
