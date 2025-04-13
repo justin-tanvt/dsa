@@ -65,6 +65,9 @@ HashSet<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u')
 ---------- Primitives and Conversions ----------
 
 ***** Char *****
+int Character.getNumericValue(char c)
+isLetter / isDigit / isLetterOrDigit / isLowerCase / isUpperCase / isWhitespace
+toLowerCase / toUpperCase
 - get alphabets
 int offset = 65;
 char[] alphabets = new int[26];
