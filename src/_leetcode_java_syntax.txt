@@ -21,10 +21,12 @@ Arrays.equals(<arr1>, <arr2>);
 - return array with variables as values
 return new int[]{a, b};
 
+- filter array into unique values
+a = Arrays.stream(a).distinct().toArray();
+
 ***** Array <> List *****
-List<T> Arrays.asList(T[] <arr>)
-List<T> List.of(T[] <arr>)
 List<T> Arrays.stream(<arr-prim>).boxed().toList();
+List<T> Arrays.asList(<T> e...)
 T[] <list>.toArray(new T[0])
 
 
