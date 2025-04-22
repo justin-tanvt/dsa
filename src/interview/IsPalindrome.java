@@ -1,6 +1,6 @@
 package interview;
 
-public class C_JPMorgan_IsPalindrome {
+public class IsPalindrome {
   public static void main(String[] args) {
     String yes = "ABA";
     String no = "APPLE";

@@ -3,7 +3,7 @@ package interview;
 import java.util.ArrayList;
 import java.util.List;
 
-public class D_Goldman_PrimeFactorisation {
+public class PrimeFactorisation {
   public static void main(String[] args) {
     System.out.println(primeFactorisation(5));
     System.out.println(primeFactorisation(7));

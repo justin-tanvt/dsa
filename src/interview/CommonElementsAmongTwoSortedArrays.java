@@ -3,7 +3,7 @@ package interview;
 import java.util.ArrayList;
 import java.util.List;
 
-public class A_Maribank_CommonElementsAmongTwoSortedArrays {
+public class CommonElementsAmongTwoSortedArrays {
 
   public static List<Integer> findCommonElementsByTraversal(int[] A, int[] B) {
     List<Integer> ans = new ArrayList<>();

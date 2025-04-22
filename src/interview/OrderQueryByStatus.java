@@ -1,6 +1,6 @@
 package interview;
 
-public class B_Tencent_OrderQueryByStatus {
+public class OrderQueryByStatus {
   public static void main(String[] args) {
     // order processing system
     // order
